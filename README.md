@@ -12,9 +12,9 @@ Metacello new
 
 # Usage
 
-- Add the following line in your #baseline method:
+- Add the following line in the #baseline method of your Configuration:
 
 ```smalltalk
 spec preLoadDoIt: #preLoad.
 ```
-- Add a method with selector #platformFilesUrl answering a <Collection> of download URL's. See Object superimplementor for an example.
+- In your Configuration class (instance side), add a method with selector #platformFilesUrl answering a <Collection> of download URL's. See Object superimplementor for an example.
