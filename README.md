@@ -17,4 +17,23 @@ Metacello new
 ```smalltalk
 spec preLoadDoIt: #preLoad.
 ```
-- In your Configuration class (instance side), add a method with selector #platformFilesUrl answering a <Collection> of download URL's. See Object superimplementor for an example.
+- In your Configuration class (instance side), add a method with selector #platformFilesUrl answering a Collection of download URL's. Examples:
+
+```smalltalk
+^ Smalltalk os isWin32 		
+    ifTrue: [ #(
+        'https://github.com/....file1.zip'
+	'http://www.dropbox.com/file1.zip' ) ]	                                                                                                                                 ifFalse: [ #(
+	'https://github.com/....file1.tar.gz'
+	'http://www.dropbox.com/file1.tar.gz') ].
+```
+
+```smalltalk
+^ String streamContents: [ : stream |		
+    stream 			
+       nextPutAll: 'https://github.com/yourGHUser/yourProject/raw/master/res/';
+       nextPutAll: (
+           Smalltalk os isWin32 					
+	       ifTrue: [ 'file1.zip' ]
+	       ifFalse: [ 'file1.tar.gz' ]) ]
+```
