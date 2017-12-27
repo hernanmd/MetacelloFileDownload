@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "HernanMoralesDurand 12/27/2017 01:55",
+	"super" : "BaselineOf",
+	"category" : "BaselineOfMetacelloFileDownload",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BaselineOfMetacelloFileDownload",
+	"type" : "normal"
+}
