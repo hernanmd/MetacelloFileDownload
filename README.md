@@ -23,7 +23,8 @@ spec preLoadDoIt: #preLoad.
 ^ Smalltalk os isWin32 		
     ifTrue: [ #(
         'https://github.com/....file1.zip'
-	'http://www.dropbox.com/file1.zip' ) ]	                                                                                                                                 ifFalse: [ #(
+	'http://www.dropbox.com/file1.zip' ) ]
+     ifFalse: [ #(
 	'https://github.com/....file1.tar.gz'
 	'http://www.dropbox.com/file1.tar.gz') ].
 ```
