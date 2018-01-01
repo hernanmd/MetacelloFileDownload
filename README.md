@@ -17,6 +17,23 @@ Metacello new
 ```smalltalk
 spec preLoadDoIt: #preLoad.
 ```
+
+To enable bootstrapping add the following two methods to your Configuration (instance side)
+
+```smalltalk
+ensureMetacelloFileDownload     
+  Metacello new           
+    baseline: 'MetacelloFileDownload';              
+    repository: 'github://hernanmd/MetacelloFileDownload';          
+    load.
+```
+
+```smalltalk
+preLoad
+    self ensureMetacelloFileDownload.
+    super preLoad.
+```
+
 - In your Configuration class (instance side), add a method with selector #platformFilesUrl answering a Collection of download URL's. Examples:
 
 ```smalltalk
@@ -38,3 +55,4 @@ spec preLoadDoIt: #preLoad.
 	       ifTrue: [ 'file1.zip' ]
 	       ifFalse: [ 'file1.tar.gz' ]) ]
 ```
+
