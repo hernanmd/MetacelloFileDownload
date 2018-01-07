@@ -2,13 +2,11 @@
 preLoad
 	" Start downloading configuration/baseline resource files "
 
-	| urlIndex |
-
-	urlIndex := 1.
 	self logCr: '====== Downloading my resource files...'.
-	[ self uncompress: (self downloadFileAt: urlIndex) ]
-	on: ZdcPluginMissing
-	do: [ : ex | 
-		urlIndex := urlIndex + 1.
-		ex retry ].
+	(1 to: self platformFilesUrl size)
+		do: [ : urlIndex | 
+			[ self uncompress: (self downloadFileAt: urlIndex) ]
+			on: ZdcPluginMissing
+			do: [ : ex | ex retry ] ]
+		displayingProgress: 'Downloading resource files...'.
 
