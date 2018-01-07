@@ -6,9 +6,9 @@ preLoad
 
 	urlIndex := 1.
 	self logCr: '====== Downloading my resource files...'.
-	[ self downloadFiles: urlIndex ]
+	[ self uncompress: (self downloadFileAt: urlIndex) ]
 	on: ZdcPluginMissing
 	do: [ : ex | 
 		urlIndex := urlIndex + 1.
 		ex retry ].
-	self logCr: '====== Uncompressing files...'.
+

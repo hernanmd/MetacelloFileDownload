@@ -3,6 +3,8 @@ uncompress: aFileReference
     " Private - Uncompress fileRef to the current working directory "
 
     | dst |
+
+	self logCr: '====== Uncompressing files...'.
     dst := FileSystem workingDirectory.
     self extractZip: aFileReference in: dst.
     self extractGZip: aFileReference in: dst.
