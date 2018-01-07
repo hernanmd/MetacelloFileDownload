@@ -9,4 +9,3 @@ preLoad
 			on: ZdcPluginMissing
 			do: [ : ex | ex retry ] ]
 		displayingProgress: 'Downloading resource files...'.
-
