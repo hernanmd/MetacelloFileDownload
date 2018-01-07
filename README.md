@@ -12,10 +12,15 @@ Metacello new
 
 # Usage
 
+- All your files must be already uploaded in .zip or .tar.gz
+- If you use Windows, .zip files will be downloaded and decompressed in the #workingDirectory.. If you use Unix/MacOS, .tar.gz files will be downloaded and decompressed in the #workingDirectory.
+- You can add several files at different URL locations in a method (see Example below).
 - Add the following line in the #baseline method of your Configuration:
 
 ```smalltalk
+"... configuration code ... "
 spec preLoadDoIt: #preLoad.
+"... configuration code ... "
 ```
 
 To enable bootstrapping add the following two methods to your Configuration (instance side)
@@ -27,6 +32,8 @@ ensureMetacelloFileDownload
     repository: 'github://hernanmd/MetacelloFileDownload';          
     load.
 ```
+
+Add the #preLoad method:
 
 ```smalltalk
 preLoad
@@ -47,12 +54,12 @@ preLoad
 ```
 
 ```smalltalk
-^ String streamContents: [ : stream |		
+^ Array with: (String streamContents: [ : stream |		
     stream 			
        nextPutAll: 'https://github.com/yourGHUser/yourProject/raw/master/res/';
        nextPutAll: (
            Smalltalk os isWin32 					
 	       ifTrue: [ 'file1.zip' ]
-	       ifFalse: [ 'file1.tar.gz' ]) ]
+	       ifFalse: [ 'file1.tar.gz' ]) ])
 ```
 
