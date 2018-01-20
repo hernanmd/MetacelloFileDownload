@@ -42,7 +42,8 @@ preLoad
 ```
 
 - In your Configuration class (instance side), add a method with selector #platformFilesUrl answering a Collection of download URL's. Examples:
---If you have mirror URL's for your resource file:
+
+-If you have mirror URL's for your resource file:
 ```smalltalk
 ^ Smalltalk os isWin32 		
     ifTrue: [ #(
@@ -52,8 +53,7 @@ preLoad
 	'https://github.com/....file1.tar.gz'
 	'http://www.dropbox.com/file1.tar.gz') ].
 ```
-
---If you have one URL for your resource file: (don't forget the last / before the last URL fragment)
+-If you have one URL for your resource file: (don't forget the last / before the last URL fragment)
 ```smalltalk
 ^ Array with: (String streamContents: [ : stream |		
     stream 			
