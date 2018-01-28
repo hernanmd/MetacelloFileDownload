@@ -10,11 +10,15 @@ Metacello new
 	load.
 ```
 
-# Usage
+# Rules of the game
 
 - All your files must be already uploaded in .zip or .tar.gz
-- If you use Windows, .zip files will be downloaded and decompressed in the #workingDirectory.. If you use Unix/MacOS, .tar.gz files will be downloaded and decompressed in the #workingDirectory.
-- You can add several files at different URL locations in a method (see Example below).
+- If you use Windows, .zip files will be downloaded and uncompressed in the #workingDirectory.
+- If you use Unix/MacOS, .tar.gz files will be downloaded and uncompressed in the #workingDirectory.
+- You can add several (mirror) URL's for the same resource file (see Example below).
+
+# Usage
+
 - Add the following line in the #baseline method of your Configuration:
 
 ```smalltalk
