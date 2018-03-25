@@ -58,7 +58,7 @@ preLoad
 	'https://github.com/....file1.tar.gz'
 	'http://www.dropbox.com/file1.tar.gz') ].
 ```
-  - If you have one URL for your resource file: (don't forget the last / before the last URL fragment)
+    - If you have one URL for your resource file: (don't forget the last / before the last URL fragment)
 ```smalltalk
 ^ Array with: (String streamContents: [ : stream |		
     stream 			
