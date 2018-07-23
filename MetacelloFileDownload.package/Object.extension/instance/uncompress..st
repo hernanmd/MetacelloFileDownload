@@ -5,6 +5,9 @@ uncompress: aFileReference
     | dst |
 
 	self logCr: '====== Uncompressing files...'.
-    dst := FileSystem workingDirectory.
-    self extractZip: aFileReference in: dst.
-    self extractGZip: aFileReference in: dst.
+	dst := FileSystem workingDirectory.
+	(aFileReference fullName endsWith: '.zip')
+		ifTrue: [ ^ self extractZip: aFileReference in: dst ]
+		ifFalse: [ 
+			(aFileReference fullName endsWith: '.gz')
+				ifTrue: [ ^ self extractGZip: aFileReference in: dst ] ].

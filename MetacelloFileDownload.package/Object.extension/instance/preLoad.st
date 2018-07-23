@@ -4,8 +4,5 @@ preLoad
 
 	self logCr: '====== Downloading my resource files...'.
 	(1 to: self platformFilesUrl size)
-		do: [ : urlIndex | 
-			[ self uncompress: (self downloadFileAt: urlIndex) ]
-			on: ZdcPluginMissing
-			do: [ : ex | ex retry ] ]
-		displayingProgress: 'Downloading resource files...'.
+		do: [ : urlIndex | self platformFileDownload: urlIndex ]
+		displayingProgress: 'Downloading resource files...'
