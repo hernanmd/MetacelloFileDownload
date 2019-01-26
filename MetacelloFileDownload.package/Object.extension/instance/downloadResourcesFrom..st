@@ -1,4 +1,4 @@
-*MetacelloFileDownload
+*MetacelloFileDownload-Pharo6
 downloadResourcesFrom: urlString
 	" Private - Download files from urlString "
 
