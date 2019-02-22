@@ -2,7 +2,7 @@ accessing
 unTarOSSubProcess: aFileReference
 
 	(Smalltalk at: #OSSUnixSubprocess) new
-		command: '/bin/tar';
+		command: 'tar';
 		arguments: { 'xvf' . aFileReference fullName };
 		redirectStderr;
 		redirectStdout;
