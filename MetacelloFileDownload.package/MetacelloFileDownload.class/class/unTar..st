@@ -1,4 +1,4 @@
-*MetacelloFileDownload
+accessing
 unTar: fileName
 
 	(Smalltalk hasClassNamed: #OSProcess)
