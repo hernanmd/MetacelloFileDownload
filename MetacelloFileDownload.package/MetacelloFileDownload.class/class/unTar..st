@@ -1,9 +1,10 @@
 accessing
 unTar: fileName
 
-	(Smalltalk hasClassNamed: #OSProcess)
-		ifFalse: [ self installOSProcess ].			
-	[ (Smalltalk at: #OSProcess) thisOSProcess 
-			waitForCommandOutput: 'tar xvf ' , fileName asFileReference fullName ]
-   on: Warning " AioEventHandler aioPluginPresent "
-   do: [ : ex | ex resume ]
+	(Smalltalk image version beginsWith: 'Pharo7')
+		ifTrue: [ 
+			self installOSSubProcess.
+			self unTarOSSubProcess: fileName asFileReference ]
+		ifFalse: [ 
+			self installOSProcess.
+			self unTarOSProcess: fileName asFileReference ].	
