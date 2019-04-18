@@ -6,4 +6,3 @@ extractGZip: aFileReference in: directoryName
 	unZipped := GZipReadStream unzip: aFileReference basename to: directoryName.
 	self unTar: unZipped.
 	aFileReference delete.
-	unZipped asFileReference delete
