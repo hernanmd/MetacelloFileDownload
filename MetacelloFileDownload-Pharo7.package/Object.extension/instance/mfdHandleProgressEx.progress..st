@@ -1,5 +1,5 @@
 *MetacelloFileDownload-Pharo7
-handleEx: bar progress: ex
+mfdHandleProgressEx: ex progress: bar
 
 	| progress |
 	progress := ex.

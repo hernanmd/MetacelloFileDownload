@@ -11,5 +11,5 @@ downloadResourcesFrom: urlString
 			maximumEntitySize: 1073741824;
 			url: urlString;
 			downloadTo: FileSystem workingDirectory ]
-		on: HTTPProgress
-		do: [ : ex | self handleEx: bar progress: ex ] ]
+		on: HTTPProgress, FileExists
+		do: [ : ex | self mfdHandleEx: ex progress: bar ] ]
