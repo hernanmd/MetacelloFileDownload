@@ -1,8 +1,8 @@
 accessing
 installOSSubProcess
+	" As documented in https://github.com/pharo-contributions/OSSubProcess#installation "
 
 	Metacello new
-		configuration: 'OSSubprocess';
-		repository: 'github://marianopeck/OSSubprocess:master/repository';
-		version: #stable;
+	 	baseline: 'OSSubprocess';
+	 	repository: 'github://pharo-contributions/OSSubprocess:master/repository';
 		load.
