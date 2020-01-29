@@ -9,12 +9,12 @@ baseline: spec
 			spec group: 'Core' with: #('MetacelloFileDownload').
 			spec group: 'default' with: #('Core') ].
 
-	spec for: #'pharo6.x' do: [ 
+	spec for: #'pharo6.x'  do: [ 
 		spec package: 'MetacelloFileDownload' with: [ 
 			spec requires: 'MetacelloFileDownload-Pharo6' ].
 		spec package: 'MetacelloFileDownload-Pharo6' ].
 	
-	spec for: #'pharo7.x' do: [ 
+	spec for: #(#'pharo7.x' #'pharo8.x') do: [ 
 		spec package: 'MetacelloFileDownload' with: [ 
 			spec requires: 'MetacelloFileDownload-Pharo7' ].
 		spec package: 'MetacelloFileDownload-Pharo7' ].
