@@ -1,8 +1,15 @@
 accessing
 extract: aFileReference in: directoryName
 
-	(aFileReference fullName endsWith: '.zip')
-		ifTrue: [ ^ self extractZip: aFileReference in: directoryName ]
+	| fullFilename |
+	
+	fullFilename := aFileReference fullName.
+	^ (fullFilename endsWith: '.zip')
+		ifTrue: [ self extractZip: aFileReference in: directoryName ]
 		ifFalse: [ 
-			(aFileReference fullName endsWith: 'gz')
-				ifTrue: [ ^ self extractGZip: aFileReference in: directoryName ] ].
+			((fullFilename endsWith: 'tgz') or: [ fullFilename endsWith: 'tar.gz' ])
+				ifTrue: [ self extractTGZip: aFileReference in: directoryName  ]
+				ifFalse: [ 
+					(fullFilename endsWith: '.gz')
+						ifTrue: [ self extractGZip: aFileReference in: directoryName ]
+						ifFalse: [ self error: 'Cannot extract unkown file type' ] ] ].

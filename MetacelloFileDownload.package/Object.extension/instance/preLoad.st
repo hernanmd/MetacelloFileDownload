@@ -2,7 +2,7 @@
 preLoad
 	" Start downloading configuration/baseline resource files "
 
-	self logCr: '====== Downloading my resource files...'.
+	self traceCr: '====== Downloading my resource files...'.
 	(1 to: self platformFilesUrl size)
-		do: [ : urlIndex | self platformFileDownload: urlIndex ]
+		do: [ :urlIndex | self platformFileDownload: urlIndex ]
 		displayingProgress: 'Downloading resource files...'
