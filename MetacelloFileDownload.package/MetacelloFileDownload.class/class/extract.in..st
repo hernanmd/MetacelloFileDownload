@@ -12,4 +12,4 @@ extract: aFileReference in: directoryName
 				ifFalse: [ 
 					(fullFilename endsWith: '.gz')
 						ifTrue: [ self extractGZip: aFileReference in: directoryName ]
-						ifFalse: [ self error: 'Cannot extract unkown file type' ] ] ].
+						ifFalse: [ self inform: 'File ' , aFileReference fullName , ' is not a recognized compressed type, so it is not extracted.' ] ] ].
