@@ -15,13 +15,12 @@ Metacello new
 
 - You can upload your files anywhere you want.
 - All your files must be already uploaded in .zip or .tar.gz
-- If you use Windows, .zip files will be downloaded and uncompressed in the #workingDirectory.
-- If you use Unix/MacOS, .tar.gz files will be downloaded and uncompressed in the #workingDirectory.
+- .zip or .tar.gz files will be downloaded and uncompressed in the ```FileSystem workingDirectory``` (check if you have write permissions first).
 - You can add several (mirror) URL's for the same resource file (see Example below).
 
 # Usage
 
-- Add the following line in the #baseline method of your Configuration/Baseline:
+- Add the following line in the #baseline method of your Configuration/BaselineOf class:
 
 ```smalltalk
 "... configuration code ... "
@@ -29,7 +28,7 @@ spec preLoadDoIt: #preLoad.
 "... configuration code ... "
 ```
 
-To enable bootstrapping add the following two methods to your Configuration/Baseline (instance side)
+To enable bootstrapping add the following two methods (instance side) to your Configuration/Baseline (instance side)
 
 ```smalltalk
 ensureMetacelloFileDownload     
@@ -39,7 +38,7 @@ ensureMetacelloFileDownload
     load.
 ```
 
-Add the #preLoad method:
+Add the #preLoad method (instance side) in your BaselineOf/ConfigurationOf class:
 
 ```smalltalk
 preLoad
@@ -47,7 +46,7 @@ preLoad
     super preLoad.
 ```
 
-- In your Configuration class (instance side), add a method with selector #platformFilesUrl answering a Collection of download URL's. Examples:
+- Finally, in your ConfigurationOf/BaselineOf class (instance side), add a method with selector #platformFilesUrl answering a Collection of download URL's. Examples:
   - If you have mirror URL's for your resource file:
 ```smalltalk
 ^ Smalltalk os isWin32 		
@@ -74,7 +73,7 @@ preLoad
 
 This software is licensed under the MIT License.
 
-Copyright Hernán Morales, 2018.
+Copyright Hernán Morales, 2018-2021.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
