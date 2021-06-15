@@ -1,10 +1,8 @@
 accessing
 unTar: fileName
+	" Older Pharo images does not support OSSubProcess and should use OSProcess. "
 
-	(Smalltalk image version beginsWithAnyOf: #('Pharo7' 'Pharo8'))
-		ifTrue: [ 
-			self installOSSubProcess.
-			self unTarOSSubProcess: fileName asFileReference ]
-		ifFalse: [ 
-			self installOSProcess.
-			self unTarOSProcess: fileName asFileReference ].	
+	self installTarDependencies.
+	(Smalltalk image version beginsWithAnyOf: #('Pharo7' 'Pharo8' 'Pharo9'))
+		ifTrue: [ self unTarOSSubProcess: fileName asFileReference ]
+		ifFalse: [ self unTarOSProcess: fileName asFileReference ].

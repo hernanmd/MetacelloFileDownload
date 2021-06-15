@@ -2,7 +2,7 @@ accessing
 shellCommand: aShellCommand
 	| command |
 
-	command := OSSUnixSubprocess new
+	command := (Smalltalk at: #OSSUnixSubprocess) new
 		shellCommand: aShellCommand;
 		redirectStdout;
 		redirectStderr;
