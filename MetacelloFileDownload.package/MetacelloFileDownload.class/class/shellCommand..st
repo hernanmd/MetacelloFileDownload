@@ -7,6 +7,6 @@ shellCommand: aShellCommand
 		redirectStdout;
 		redirectStderr;
 	    runAndWaitOnExitDo: [ :process :outString :errString  |
-	        errString inspect.
-	        outString inspect ].
+	        errString traceCr.
+	        outString traceCr ].
 	command closeAndCleanStreams.
