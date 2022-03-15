@@ -71,8 +71,7 @@ Finally, in your ConfigurationOf/BaselineOf class (instance side), add a method 
 ```smalltalk
 platformFilesUrl
 
-	^ Array with: (String streamContents: [ : stream |		
-		stream nextPutAll: 'https://github.com/yourGHUser/yourProject/raw/master/res/file1.zip' ]
+	^ Array with: 'https://github.com/yourGHUser/yourProject/raw/master/res/file1.zip' ]
 ```
 
 ### If you have one URL for your resource file for multiple OS
