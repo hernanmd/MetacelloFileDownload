@@ -4,9 +4,9 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Resources](#resources)
-  - [If you have one resource file for all OS(es)](#if-you-have-one-resource-file-for-all-os\(es\))
-  - [If you have one URL for your resource file for multiple OS(es)](#if-you-have-one-url-for-your-resource-file-for-multiple-os\(es\))
-  - [If you have mirror URL's for your resource file](#if-you-have-mirror-url's-for-your-resource-file)
+  - [If you have one resource file for all OS(es)](#if-you-have-one-resource-file-for-all-os)
+  - [If you have one URL for your resource file for multiple OS(es)](#if-you-have-one-url-for-your-resource-file-for-multiple-os)
+  - [If you have mirror URL's for your resource file](#if-you-have-mirror-urls-for-your-resource-file)
 - [License](#license)
 
 # Description
@@ -64,7 +64,7 @@ preLoad
 
 Finally, in your ConfigurationOf/BaselineOf class (instance side), add a method with selector #platformFilesUrl answering a Collection of download URL's. 
 
-### If you have one resource file for all OS(es)
+### If you have one resource file for all OS
 
  Assuming you have uploaded your resource files named "file1.zip" and file1.tar.gz to a "res" directory in your repository:
  
@@ -75,7 +75,7 @@ platformFilesUrl
 		stream nextPutAll: 'https://github.com/yourGHUser/yourProject/raw/master/res/file1.zip' ]
 ```
 
-### If you have one URL for your resource file for multiple OS(es)
+### If you have one URL for your resource file for multiple OS
  
  Assuming you have uploaded your resource files named "file1.zip" and file1.tar.gz to a "res" directory:
  (don't forget the last / before the last URL fragment)
@@ -93,7 +93,7 @@ platformFilesUrl
 ```
 
 
-### If you have mirror URL's for your resource file
+### If you have mirror URLs for your resource file
 
 The same as above, specify the raw URL to your resource files
 
