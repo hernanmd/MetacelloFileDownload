@@ -4,9 +4,9 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Resources](#resources)
-  - [If you have one resource file for all OS(es)](#'if-you-have-one-resource-file-for-all-os(es)')
-  - [If you have one URL for your resource file for multiple OS(es)](#if-you-have-one-url-for-your-resource-file-for-multiple-os(es))
-  - [If you have mirror URL's for your resource file](#if-you-have-mirror-url''s-for-your-resource-file)
+  - [If you have one resource file for all OS(es)](#if-you-have-one-resource-file-for-all-os\(es\))
+  - [If you have one URL for your resource file for multiple OS(es)](#if-you-have-one-url-for-your-resource-file-for-multiple-os\(es\))
+  - [If you have mirror URL's for your resource file](#if-you-have-mirror-url's-for-your-resource-file)
 - [License](#license)
 
 # Description
