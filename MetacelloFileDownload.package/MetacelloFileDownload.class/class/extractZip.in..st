@@ -9,4 +9,5 @@ extractZip: aFileReference in: directoryName
         readFrom: aFileReference fullName;
         extractAllTo: directoryName ]
 	ensure: [ zipArchive close ].
+	self traceCr: 'Deleting compressed zip: ' , aFileReference fullName.
 	aFileReference delete

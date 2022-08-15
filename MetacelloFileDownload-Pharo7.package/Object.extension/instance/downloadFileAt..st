@@ -4,6 +4,7 @@ downloadFileAt: urlIndex
 
 	| url fileRef |
 	url := (self platformFilesUrl at: urlIndex) asZnUrl.
+	self traceCr: 'Downloading file at: ' , url asString.
 	fileRef := FileSystem disk workingDirectory / url pathSegments last.	
 	self downloadResourcesFrom: url.
 	^ fileRef

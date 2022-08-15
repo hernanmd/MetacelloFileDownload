@@ -4,6 +4,7 @@ extract: aFileReference in: directoryName
 	| fullFilename |
 	
 	fullFilename := aFileReference fullName.
+	self traceCr: 'Extracting file: ' , fullFilename , ' in ' , directoryName asString.
 	^ (fullFilename endsWith: '.zip')
 		ifTrue: [ self extractZip: aFileReference in: directoryName ]
 		ifFalse: [ 
@@ -12,4 +13,4 @@ extract: aFileReference in: directoryName
 				ifFalse: [ 
 					(fullFilename endsWith: '.gz')
 						ifTrue: [ self extractGZip: aFileReference in: directoryName ]
-						ifFalse: [ self inform: 'File ' , aFileReference fullName , ' is not a recognized compressed type, so it is not extracted.' ] ] ].
+						ifFalse: [ self traceCr: 'File ' , aFileReference fullName , ' is not a recognized compressed type, so it is not extracted.' ] ] ].
