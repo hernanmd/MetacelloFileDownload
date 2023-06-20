@@ -14,7 +14,7 @@ baseline: spec
 			spec requires: 'MetacelloFileDownload-Pharo6' ].
 		spec package: 'MetacelloFileDownload-Pharo6' ].
 	
-	spec for: #(#'pharo7.x' #'pharo8.x' #'pharo9.x' #'pharo10.x') do: [ 
+	spec for: #(#'pharo7.x' #'pharo8.x' #'pharo9.x' #'pharo10.x' 'pharo11.x' 'pharo12.x') do: [ 
 		spec package: 'MetacelloFileDownload' with: [ 
 			spec requires: 'MetacelloFileDownload-Pharo7' ].
 		spec package: 'MetacelloFileDownload-Pharo7' ].
