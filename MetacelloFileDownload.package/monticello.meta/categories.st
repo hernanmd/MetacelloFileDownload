@@ -1,1 +1,1 @@
-SystemOrganization addCategory: #MetacelloFileDownload!
+self packageOrganizer ensurePackage: #MetacelloFileDownload withTags: #()!
