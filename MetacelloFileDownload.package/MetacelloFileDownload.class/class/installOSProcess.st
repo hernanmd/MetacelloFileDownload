@@ -1,7 +1,7 @@
 accessing
 installOSProcess
 
-	Gofer new
+	(Smalltalk at: #Gofer) new
 		squeaksource: 'MetacelloRepository';
 		package: 'ConfigurationOfOSProcess';
 		load.
